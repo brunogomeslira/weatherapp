@@ -106,13 +106,16 @@ export const HomeScreen: React.FC = () => {
   };
 
   const requestAuthorizationGeolocation = (): Promise<boolean> => {
+    setLoading(true);
     return new Promise(resolve => {
       Geolocation.getCurrentPosition(
         () => {
+          setLoading(false);
           requestData();
           resolve(true);
         },
         () => {
+          setLoading(false);
           Linking.openSettings();
           resolve(false);
         },
