@@ -1,8 +1,8 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+// import {TouchableOpacity} from 'react-native';
 import Location from '../../assets/icons/location.svg';
 import More from '../../assets/icons/more.svg';
-import Info from '../../assets/icons/info.svg';
+// import Info from '../../assets/icons/info.svg';
 import * as S from './style';
 import {useTheme} from 'styled-components/native';
 import {RFPercentage as responsive} from 'react-native-responsive-fontsize';
@@ -34,13 +34,13 @@ export const Header: React.FC<HeaderProps> = ({
           fill={colors.BLUE_DARK}
         />
       </S.TouchableOpacity>
-      <TouchableOpacity onPress={handleInfo}>
+      {/* <TouchableOpacity onPress={handleInfo}>
         <Info
           width={responsive(4)}
           height={responsive(4)}
           fill={colors.BLUE_DARK}
         />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </S.header>
   );
 };

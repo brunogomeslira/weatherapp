@@ -86,7 +86,7 @@ export default {
     WHITE30: '#ffffff45',
     WHITE20: '#ffffff33',
     WHITE10: '#ffffff1A',
-    WHITE_RGB: 'rgba(255, 255, 255, 1)',
+    WHITE_RGB: 'rgba(255, 255, 255, 0.5)',
     WHITE_SMOKE: '#f4f4f4',
   },
 };

@@ -1,24 +1,33 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {Image} from 'react-native';
+import {parseTime} from '../../utils/time';
+import {WeatherMapList} from '../../../services/types';
 import * as S from './style';
 
 export type CardProps = {
   time: string;
   icon: string;
-  min: string;
-  max: string;
+  temp: number;
+  item: WeatherMapList;
+  onPress: (item: WeatherMapList) => void;
 };
 
-export const Card: React.FC<CardProps> = ({icon, max, min, time}) => {
+export const Card: React.FC<CardProps> = ({
+  icon,
+  temp,
+  time,
+  item,
+  onPress,
+}) => {
   return (
-    <View>
+    <S.Container onPress={() => onPress(item)}>
+      <S.Time>{parseTime(time)}</S.Time>
+
       <Image
-        style={{width: 60, height: 60}}
+        style={{width: 80, height: 80}}
         source={{uri: `https://openweathermap.org/img/wn/${icon}@4x.png`}}
       />
-      <S.Text>{max}</S.Text>
-      <Text>{min}</Text>
-      <Text>{time}</Text>
-    </View>
+      <S.Temp>{` ${String(temp).slice(0, 2)} °`}</S.Temp>
+    </S.Container>
   );
 };
