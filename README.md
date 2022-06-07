@@ -15,7 +15,7 @@ O projeto foi criado para apresentar um pouco do meu conhecimento no desenvolvim
 ## :rocket: Tecnologias Utilizadas
 
 - React-native
-- React Navigator
+- React Navigation
 - Bottom Sheet
 - Styled Components
 
